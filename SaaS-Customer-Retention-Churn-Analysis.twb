@@ -1,0 +1,2431 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20253.26.0109.0333                               -->
+<workbook original-version='18.1' source-build='2025.3.2 (20253.26.0109.0333)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SingleValuePerNestSorting />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='ravenstack_accounts.csv (Multiple Connections)' inline='true' name='federated.0n7an2p0iksbn516lkoki0ukiyxw' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ravenstack_accounts' name='textscan.05p0m2k00katet1911ulf1038i8x'>
+            <connection class='textscan' directory='C:/Users/venka/OneDrive/Desktop/archive (1)' filename='ravenstack_accounts.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='ravenstack_churn_events' name='textscan.1irw3xk1snf79s1ep9ll204q3lm5'>
+            <connection class='textscan' directory='C:/Users/venka/OneDrive/Desktop/archive (1)' filename='ravenstack_churn_events.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='ravenstack_feature_usage' name='textscan.1mopfhl1ft8wo816lnjcb1cbyuow'>
+            <connection class='textscan' directory='C:/Users/venka/OneDrive/Desktop/archive (1)' filename='ravenstack_feature_usage.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='ravenstack_subscriptions' name='textscan.1tvnsk11cjq3361cc65gj17by2rn'>
+            <connection class='textscan' directory='C:/Users/venka/OneDrive/Desktop/archive (1)' filename='ravenstack_subscriptions.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='ravenstack_support_tickets' name='textscan.0vhjz4309x3wbt12xnb9e1mdlwz6'>
+            <connection class='textscan' cleaning='yes' compat='no' csvFile='C:/Users/venka/OneDrive/Desktop/archive (1)/ravenstack_support_tickets.csv' dataRefreshTime='' directory='C:/Users/venka/OneDrive/Desktop/archive (1)' filename='C:/Users/venka/AppData/Local/Temp/TableauTemp/1ig19wk0c1qnc91em3olk0nfcz18/ravenstack_support_tickets.csv.xlsx' interpretationMode='8' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.05p0m2k00katet1911ulf1038i8x' name='ravenstack_accounts.csv' table='[C:\Users\venka\OneDrive\Desktop\archive (1)\ravenstack_accounts#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='account_id' ordinal='0' />
+              <column datatype='string' name='account_name' ordinal='1' />
+              <column datatype='string' name='industry' ordinal='2' />
+              <column datatype='string' name='country' ordinal='3' />
+              <column datatype='date' name='signup_date' ordinal='4' />
+              <column datatype='string' name='referral_source' ordinal='5' />
+              <column datatype='string' name='plan_tier' ordinal='6' />
+              <column datatype='integer' name='seats' ordinal='7' />
+              <column datatype='boolean' name='is_trial' ordinal='8' />
+              <column datatype='boolean' name='churn_flag' ordinal='9' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1irw3xk1snf79s1ep9ll204q3lm5' name='ravenstack_churn_events.csv' table='[ravenstack_churn_events#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='churn_event_id' ordinal='0' />
+              <column datatype='string' name='account_id' ordinal='1' />
+              <column datatype='date' name='churn_date' ordinal='2' />
+              <column datatype='string' name='reason_code' ordinal='3' />
+              <column datatype='real' name='refund_amount_usd' ordinal='4' />
+              <column datatype='boolean' name='preceding_upgrade_flag' ordinal='5' />
+              <column datatype='boolean' name='preceding_downgrade_flag' ordinal='6' />
+              <column datatype='boolean' name='is_reactivation' ordinal='7' />
+              <column datatype='string' name='feedback_text' ordinal='8' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1irw3xk1snf79s1ep9ll204q3lm5' name='ravenstack_subscriptions.csv' table='[ravenstack_subscriptions#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='subscription_id' ordinal='0' />
+              <column datatype='string' name='account_id' ordinal='1' />
+              <column datatype='date' name='start_date' ordinal='2' />
+              <column datatype='date' name='end_date' ordinal='3' />
+              <column datatype='string' name='plan_tier' ordinal='4' />
+              <column datatype='integer' name='seats' ordinal='5' />
+              <column datatype='integer' name='mrr_amount' ordinal='6' />
+              <column datatype='integer' name='arr_amount' ordinal='7' />
+              <column datatype='boolean' name='is_trial' ordinal='8' />
+              <column datatype='boolean' name='upgrade_flag' ordinal='9' />
+              <column datatype='boolean' name='downgrade_flag' ordinal='10' />
+              <column datatype='boolean' name='churn_flag' ordinal='11' />
+              <column datatype='string' name='billing_frequency' ordinal='12' />
+              <column datatype='boolean' name='auto_renew_flag' ordinal='13' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1irw3xk1snf79s1ep9ll204q3lm5' name='ravenstack_feature_usage.csv' table='[ravenstack_feature_usage#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='usage_id' ordinal='0' />
+              <column datatype='string' name='subscription_id' ordinal='1' />
+              <column datatype='date' name='usage_date' ordinal='2' />
+              <column datatype='string' name='feature_name' ordinal='3' />
+              <column datatype='integer' name='usage_count' ordinal='4' />
+              <column datatype='integer' name='usage_duration_secs' ordinal='5' />
+              <column datatype='integer' name='error_count' ordinal='6' />
+              <column datatype='boolean' name='is_beta_feature' ordinal='7' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1irw3xk1snf79s1ep9ll204q3lm5' name='ravenstack_support_tickets.csv' table='[ravenstack_support_tickets#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='ticket_id' ordinal='0' />
+              <column datatype='string' name='account_id' ordinal='1' />
+              <column datatype='date' name='submitted_at' ordinal='2' />
+              <column datatype='datetime' name='closed_at' ordinal='3' />
+              <column datatype='real' name='resolution_time_hours' ordinal='4' />
+              <column datatype='string' name='priority' ordinal='5' />
+              <column datatype='integer' name='first_response_time_minutes' ordinal='6' />
+              <column datatype='real' name='satisfaction_score' ordinal='7' />
+              <column datatype='boolean' name='escalation_flag' ordinal='8' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[account_id (ravenstack_churn_events.csv)]' value='[ravenstack_churn_events.csv].[account_id]' />
+          <map key='[account_id (ravenstack_subscriptions.csv)]' value='[ravenstack_subscriptions.csv].[account_id]' />
+          <map key='[account_id (ravenstack_support_tickets.csv)]' value='[ravenstack_support_tickets.csv].[account_id]' />
+          <map key='[account_id]' value='[ravenstack_accounts.csv].[account_id]' />
+          <map key='[account_name]' value='[ravenstack_accounts.csv].[account_name]' />
+          <map key='[arr_amount]' value='[ravenstack_subscriptions.csv].[arr_amount]' />
+          <map key='[auto_renew_flag]' value='[ravenstack_subscriptions.csv].[auto_renew_flag]' />
+          <map key='[billing_frequency]' value='[ravenstack_subscriptions.csv].[billing_frequency]' />
+          <map key='[churn_date]' value='[ravenstack_churn_events.csv].[churn_date]' />
+          <map key='[churn_event_id]' value='[ravenstack_churn_events.csv].[churn_event_id]' />
+          <map key='[churn_flag (ravenstack_subscriptions.csv)]' value='[ravenstack_subscriptions.csv].[churn_flag]' />
+          <map key='[churn_flag]' value='[ravenstack_accounts.csv].[churn_flag]' />
+          <map key='[closed_at]' value='[ravenstack_support_tickets.csv].[closed_at]' />
+          <map key='[country]' value='[ravenstack_accounts.csv].[country]' />
+          <map key='[downgrade_flag]' value='[ravenstack_subscriptions.csv].[downgrade_flag]' />
+          <map key='[end_date]' value='[ravenstack_subscriptions.csv].[end_date]' />
+          <map key='[error_count]' value='[ravenstack_feature_usage.csv].[error_count]' />
+          <map key='[escalation_flag]' value='[ravenstack_support_tickets.csv].[escalation_flag]' />
+          <map key='[feature_name]' value='[ravenstack_feature_usage.csv].[feature_name]' />
+          <map key='[feedback_text]' value='[ravenstack_churn_events.csv].[feedback_text]' />
+          <map key='[first_response_time_minutes]' value='[ravenstack_support_tickets.csv].[first_response_time_minutes]' />
+          <map key='[industry]' value='[ravenstack_accounts.csv].[industry]' />
+          <map key='[is_beta_feature]' value='[ravenstack_feature_usage.csv].[is_beta_feature]' />
+          <map key='[is_reactivation]' value='[ravenstack_churn_events.csv].[is_reactivation]' />
+          <map key='[is_trial (ravenstack_subscriptions.csv)]' value='[ravenstack_subscriptions.csv].[is_trial]' />
+          <map key='[is_trial]' value='[ravenstack_accounts.csv].[is_trial]' />
+          <map key='[mrr_amount]' value='[ravenstack_subscriptions.csv].[mrr_amount]' />
+          <map key='[plan_tier (ravenstack_subscriptions.csv)]' value='[ravenstack_subscriptions.csv].[plan_tier]' />
+          <map key='[plan_tier]' value='[ravenstack_accounts.csv].[plan_tier]' />
+          <map key='[preceding_downgrade_flag]' value='[ravenstack_churn_events.csv].[preceding_downgrade_flag]' />
+          <map key='[preceding_upgrade_flag]' value='[ravenstack_churn_events.csv].[preceding_upgrade_flag]' />
+          <map key='[priority]' value='[ravenstack_support_tickets.csv].[priority]' />
+          <map key='[reason_code]' value='[ravenstack_churn_events.csv].[reason_code]' />
+          <map key='[referral_source]' value='[ravenstack_accounts.csv].[referral_source]' />
+          <map key='[refund_amount_usd]' value='[ravenstack_churn_events.csv].[refund_amount_usd]' />
+          <map key='[resolution_time_hours]' value='[ravenstack_support_tickets.csv].[resolution_time_hours]' />
+          <map key='[satisfaction_score]' value='[ravenstack_support_tickets.csv].[satisfaction_score]' />
+          <map key='[seats (ravenstack_subscriptions.csv)]' value='[ravenstack_subscriptions.csv].[seats]' />
+          <map key='[seats]' value='[ravenstack_accounts.csv].[seats]' />
+          <map key='[signup_date]' value='[ravenstack_accounts.csv].[signup_date]' />
+          <map key='[start_date]' value='[ravenstack_subscriptions.csv].[start_date]' />
+          <map key='[submitted_at]' value='[ravenstack_support_tickets.csv].[submitted_at]' />
+          <map key='[subscription_id (ravenstack_feature_usage.csv)]' value='[ravenstack_feature_usage.csv].[subscription_id]' />
+          <map key='[subscription_id]' value='[ravenstack_subscriptions.csv].[subscription_id]' />
+          <map key='[ticket_id]' value='[ravenstack_support_tickets.csv].[ticket_id]' />
+          <map key='[upgrade_flag]' value='[ravenstack_subscriptions.csv].[upgrade_flag]' />
+          <map key='[usage_count]' value='[ravenstack_feature_usage.csv].[usage_count]' />
+          <map key='[usage_date]' value='[ravenstack_feature_usage.csv].[usage_date]' />
+          <map key='[usage_duration_secs]' value='[ravenstack_feature_usage.csv].[usage_duration_secs]' />
+          <map key='[usage_id]' value='[ravenstack_feature_usage.csv].[usage_id]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ravenstack_accounts.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ravenstack_churn_events.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ravenstack_feature_usage.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ravenstack_support_tickets.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>account_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[account_id]</local-name>
+            <parent-name>[ravenstack_accounts.csv]</parent-name>
+            <remote-alias>account_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>account_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[account_name]</local-name>
+            <parent-name>[ravenstack_accounts.csv]</parent-name>
+            <remote-alias>account_name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>industry</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[industry]</local-name>
+            <parent-name>[ravenstack_accounts.csv]</parent-name>
+            <remote-alias>industry</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[ravenstack_accounts.csv]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>signup_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[signup_date]</local-name>
+            <parent-name>[ravenstack_accounts.csv]</parent-name>
+            <remote-alias>signup_date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>referral_source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[referral_source]</local-name>
+            <parent-name>[ravenstack_accounts.csv]</parent-name>
+            <remote-alias>referral_source</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>plan_tier</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[plan_tier]</local-name>
+            <parent-name>[ravenstack_accounts.csv]</parent-name>
+            <remote-alias>plan_tier</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>seats</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[seats]</local-name>
+            <parent-name>[ravenstack_accounts.csv]</parent-name>
+            <remote-alias>seats</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_trial</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_trial]</local-name>
+            <parent-name>[ravenstack_accounts.csv]</parent-name>
+            <remote-alias>is_trial</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_flag</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[churn_flag]</local-name>
+            <parent-name>[ravenstack_accounts.csv]</parent-name>
+            <remote-alias>churn_flag</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_event_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[churn_event_id]</local-name>
+            <parent-name>[ravenstack_churn_events.csv]</parent-name>
+            <remote-alias>churn_event_id</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>account_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[account_id (ravenstack_churn_events.csv)]</local-name>
+            <parent-name>[ravenstack_churn_events.csv]</parent-name>
+            <remote-alias>account_id</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[churn_date]</local-name>
+            <parent-name>[ravenstack_churn_events.csv]</parent-name>
+            <remote-alias>churn_date</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reason_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reason_code]</local-name>
+            <parent-name>[ravenstack_churn_events.csv]</parent-name>
+            <remote-alias>reason_code</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>refund_amount_usd</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[refund_amount_usd]</local-name>
+            <parent-name>[ravenstack_churn_events.csv]</parent-name>
+            <remote-alias>refund_amount_usd</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>preceding_upgrade_flag</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[preceding_upgrade_flag]</local-name>
+            <parent-name>[ravenstack_churn_events.csv]</parent-name>
+            <remote-alias>preceding_upgrade_flag</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>preceding_downgrade_flag</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[preceding_downgrade_flag]</local-name>
+            <parent-name>[ravenstack_churn_events.csv]</parent-name>
+            <remote-alias>preceding_downgrade_flag</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_reactivation</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_reactivation]</local-name>
+            <parent-name>[ravenstack_churn_events.csv]</parent-name>
+            <remote-alias>is_reactivation</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>feedback_text</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[feedback_text]</local-name>
+            <parent-name>[ravenstack_churn_events.csv]</parent-name>
+            <remote-alias>feedback_text</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>subscription_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[subscription_id]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>subscription_id</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>account_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[account_id (ravenstack_subscriptions.csv)]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>account_id</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[start_date]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>start_date</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[end_date]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>end_date</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>plan_tier</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[plan_tier (ravenstack_subscriptions.csv)]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>plan_tier</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>seats</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[seats (ravenstack_subscriptions.csv)]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>seats</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mrr_amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[mrr_amount]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>mrr_amount</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>arr_amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[arr_amount]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>arr_amount</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_trial</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_trial (ravenstack_subscriptions.csv)]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>is_trial</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>upgrade_flag</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[upgrade_flag]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>upgrade_flag</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>downgrade_flag</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[downgrade_flag]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>downgrade_flag</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_flag</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[churn_flag (ravenstack_subscriptions.csv)]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>churn_flag</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>billing_frequency</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[billing_frequency]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>billing_frequency</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>auto_renew_flag</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[auto_renew_flag]</local-name>
+            <parent-name>[ravenstack_subscriptions.csv]</parent-name>
+            <remote-alias>auto_renew_flag</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>usage_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[usage_id]</local-name>
+            <parent-name>[ravenstack_feature_usage.csv]</parent-name>
+            <remote-alias>usage_id</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_feature_usage.csv_F0EF8F1E352B40AFAD4014F11ED3A202]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>subscription_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[subscription_id (ravenstack_feature_usage.csv)]</local-name>
+            <parent-name>[ravenstack_feature_usage.csv]</parent-name>
+            <remote-alias>subscription_id</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_feature_usage.csv_F0EF8F1E352B40AFAD4014F11ED3A202]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>usage_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[usage_date]</local-name>
+            <parent-name>[ravenstack_feature_usage.csv]</parent-name>
+            <remote-alias>usage_date</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_feature_usage.csv_F0EF8F1E352B40AFAD4014F11ED3A202]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>feature_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[feature_name]</local-name>
+            <parent-name>[ravenstack_feature_usage.csv]</parent-name>
+            <remote-alias>feature_name</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_feature_usage.csv_F0EF8F1E352B40AFAD4014F11ED3A202]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>usage_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[usage_count]</local-name>
+            <parent-name>[ravenstack_feature_usage.csv]</parent-name>
+            <remote-alias>usage_count</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_feature_usage.csv_F0EF8F1E352B40AFAD4014F11ED3A202]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>usage_duration_secs</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[usage_duration_secs]</local-name>
+            <parent-name>[ravenstack_feature_usage.csv]</parent-name>
+            <remote-alias>usage_duration_secs</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_feature_usage.csv_F0EF8F1E352B40AFAD4014F11ED3A202]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>error_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[error_count]</local-name>
+            <parent-name>[ravenstack_feature_usage.csv]</parent-name>
+            <remote-alias>error_count</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_feature_usage.csv_F0EF8F1E352B40AFAD4014F11ED3A202]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_beta_feature</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_beta_feature]</local-name>
+            <parent-name>[ravenstack_feature_usage.csv]</parent-name>
+            <remote-alias>is_beta_feature</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_feature_usage.csv_F0EF8F1E352B40AFAD4014F11ED3A202]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ticket_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ticket_id]</local-name>
+            <parent-name>[ravenstack_support_tickets.csv]</parent-name>
+            <remote-alias>ticket_id</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>account_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[account_id (ravenstack_support_tickets.csv)]</local-name>
+            <parent-name>[ravenstack_support_tickets.csv]</parent-name>
+            <remote-alias>account_id</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>submitted_at</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[submitted_at]</local-name>
+            <parent-name>[ravenstack_support_tickets.csv]</parent-name>
+            <remote-alias>submitted_at</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>closed_at</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[closed_at]</local-name>
+            <parent-name>[ravenstack_support_tickets.csv]</parent-name>
+            <remote-alias>closed_at</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resolution_time_hours</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[resolution_time_hours]</local-name>
+            <parent-name>[ravenstack_support_tickets.csv]</parent-name>
+            <remote-alias>resolution_time_hours</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>priority</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[priority]</local-name>
+            <parent-name>[ravenstack_support_tickets.csv]</parent-name>
+            <remote-alias>priority</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>first_response_time_minutes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[first_response_time_minutes]</local-name>
+            <parent-name>[ravenstack_support_tickets.csv]</parent-name>
+            <remote-alias>first_response_time_minutes</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>satisfaction_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[satisfaction_score]</local-name>
+            <parent-name>[ravenstack_support_tickets.csv]</parent-name>
+            <remote-alias>satisfaction_score</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>escalation_flag</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[escalation_flag]</local-name>
+            <parent-name>[ravenstack_support_tickets.csv]</parent-name>
+            <remote-alias>escalation_flag</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='TOTAL ACCOUNTS' datatype='integer' name='[Calculation_0819453678055424]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([account_id])' />
+      </column>
+      <column caption='Churned Accounts' datatype='integer' name='[Calculation_0819453678690305]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([account_id])' />
+      </column>
+      <column caption='Churn Rate' datatype='real' default-format='p0.0%' name='[Calculation_0819453680181251]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD(&#13;&#10;    IF NOT ISNULL([churn_event_id]) &#13;&#10;    THEN [account_id] &#13;&#10;    END&#13;&#10;)&#13;&#10;/&#13;&#10;COUNTD([account_id])' />
+      </column>
+      <column caption='Monthly Churnes Accounts' datatype='integer' name='[Calculation_0819453684604932]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([account_id])' />
+      </column>
+      <column caption='Chrun color' datatype='string' name='[Calculation_1103952990982144]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF [Calculation_0819453680181251] &gt; 0.6 THEN &quot;High&quot;&#13;&#10;ELSEIF [Calculation_0819453680181251] &gt; 0.4 THEN &quot;Medium&quot;&#13;&#10;ELSE &quot;Low&quot;&#13;&#10;END' />
+      </column>
+      <column caption='ravenstack_accounts.csv' datatype='table' name='[__tableau_internal_object_id__].[ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E]' role='measure' type='quantitative' />
+      <column caption='ravenstack_churn_events.csv' datatype='table' name='[__tableau_internal_object_id__].[ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C]' role='measure' type='quantitative' />
+      <column caption='ravenstack_feature_usage.csv' datatype='table' name='[__tableau_internal_object_id__].[ravenstack_feature_usage.csv_F0EF8F1E352B40AFAD4014F11ED3A202]' role='measure' type='quantitative' />
+      <column caption='ravenstack_subscriptions.csv' datatype='table' name='[__tableau_internal_object_id__].[ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A]' role='measure' type='quantitative' />
+      <column caption='ravenstack_support_tickets.csv' datatype='table' name='[__tableau_internal_object_id__].[ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5]' role='measure' type='quantitative' />
+      <column caption='Account Id (Ravenstack Churn Events.Csv)' datatype='string' name='[account_id (ravenstack_churn_events.csv)]' role='dimension' type='nominal' />
+      <column caption='Account Id (Ravenstack Subscriptions.Csv)' datatype='string' name='[account_id (ravenstack_subscriptions.csv)]' role='dimension' type='nominal' />
+      <column caption='Account Id (Ravenstack Support Tickets.Csv)' datatype='string' name='[account_id (ravenstack_support_tickets.csv)]' role='dimension' type='nominal' />
+      <column caption='Account Id' datatype='string' name='[account_id]' role='dimension' type='nominal' />
+      <column caption='Account Name' datatype='string' name='[account_name]' role='dimension' type='nominal' />
+      <column caption='Arr Amount' datatype='integer' name='[arr_amount]' role='measure' type='quantitative' />
+      <column caption='Auto Renew Flag' datatype='boolean' name='[auto_renew_flag]' role='dimension' type='nominal' />
+      <column caption='Billing Frequency' datatype='string' name='[billing_frequency]' role='dimension' type='nominal' />
+      <column caption='Churn Date' datatype='date' name='[churn_date]' role='dimension' type='ordinal' />
+      <column caption='Churn Flag (Ravenstack Subscriptions.Csv)' datatype='boolean' name='[churn_flag (ravenstack_subscriptions.csv)]' role='dimension' type='nominal' />
+      <column caption='Churn Flag' datatype='boolean' name='[churn_flag]' role='dimension' type='nominal' />
+      <column caption='Closed At' datatype='datetime' name='[closed_at]' role='dimension' type='ordinal' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Downgrade Flag' datatype='boolean' name='[downgrade_flag]' role='dimension' type='nominal' />
+      <column caption='End Date' datatype='date' name='[end_date]' role='dimension' type='ordinal' />
+      <column caption='Error Count' datatype='integer' name='[error_count]' role='measure' type='quantitative' />
+      <column caption='Escalation Flag' datatype='boolean' name='[escalation_flag]' role='dimension' type='nominal' />
+      <column caption='Feature Name' datatype='string' name='[feature_name]' role='dimension' type='nominal' />
+      <column caption='Feedback Text' datatype='string' name='[feedback_text]' role='dimension' type='nominal' />
+      <column caption='First Response Time Minutes' datatype='integer' name='[first_response_time_minutes]' role='measure' type='quantitative' />
+      <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+      <column caption='Is Beta Feature' datatype='boolean' name='[is_beta_feature]' role='dimension' type='nominal' />
+      <column caption='Is Reactivation' datatype='boolean' name='[is_reactivation]' role='dimension' type='nominal' />
+      <column caption='Is Trial (Ravenstack Subscriptions.Csv)' datatype='boolean' name='[is_trial (ravenstack_subscriptions.csv)]' role='dimension' type='nominal' />
+      <column caption='Is Trial' datatype='boolean' name='[is_trial]' role='dimension' type='nominal' />
+      <column caption='Mrr Amount' datatype='integer' name='[mrr_amount]' role='measure' type='quantitative' />
+      <column caption='Plan Tier (Ravenstack Subscriptions.Csv)' datatype='string' name='[plan_tier (ravenstack_subscriptions.csv)]' role='dimension' type='nominal' />
+      <column caption='Plan Tier' datatype='string' name='[plan_tier]' role='dimension' type='nominal' />
+      <column caption='Preceding Downgrade Flag' datatype='boolean' name='[preceding_downgrade_flag]' role='dimension' type='nominal' />
+      <column caption='Preceding Upgrade Flag' datatype='boolean' name='[preceding_upgrade_flag]' role='dimension' type='nominal' />
+      <column caption='Priority' datatype='string' name='[priority]' role='dimension' type='nominal' />
+      <column caption='Reason Code' datatype='string' name='[reason_code]' role='dimension' type='nominal' />
+      <column caption='Referral Source' datatype='string' name='[referral_source]' role='dimension' type='nominal' />
+      <column caption='Refund Amount Usd' datatype='real' name='[refund_amount_usd]' role='measure' type='quantitative' />
+      <column caption='Resolution Time Hours' datatype='real' name='[resolution_time_hours]' role='measure' type='quantitative' />
+      <column caption='Satisfaction Score' datatype='real' name='[satisfaction_score]' role='measure' type='quantitative' />
+      <column caption='Seats (Ravenstack Subscriptions.Csv)' datatype='integer' name='[seats (ravenstack_subscriptions.csv)]' role='measure' type='quantitative' />
+      <column caption='Seats' datatype='integer' name='[seats]' role='measure' type='quantitative' />
+      <column caption='Signup Date' datatype='date' name='[signup_date]' role='dimension' type='ordinal' />
+      <column caption='Start Date' datatype='date' name='[start_date]' role='dimension' type='ordinal' />
+      <column caption='Submitted At' datatype='date' name='[submitted_at]' role='dimension' type='ordinal' />
+      <column caption='Subscription Id (Ravenstack Feature Usage.Csv)' datatype='string' name='[subscription_id (ravenstack_feature_usage.csv)]' role='dimension' type='nominal' />
+      <column caption='Subscription Id' datatype='string' name='[subscription_id]' role='dimension' type='nominal' />
+      <column caption='Ticket Id' datatype='string' name='[ticket_id]' role='dimension' type='nominal' />
+      <column caption='Upgrade Flag' datatype='boolean' name='[upgrade_flag]' role='dimension' type='nominal' />
+      <column caption='Usage Count' datatype='integer' name='[usage_count]' role='measure' type='quantitative' />
+      <column caption='Usage Date' datatype='date' name='[usage_date]' role='dimension' type='ordinal' />
+      <column caption='Usage Duration Secs' datatype='integer' name='[usage_duration_secs]' role='measure' type='quantitative' />
+      <column caption='Usage Id' datatype='string' name='[usage_id]' role='dimension' type='nominal' />
+      <column-instance column='[churn_date]' derivation='Month' name='[mn:churn_date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Calculation_1103952990982144]' derivation='User' name='[usr:Calculation_1103952990982144:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Country)' hidden='true' name='[Action (Country)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[country]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Industry)' hidden='true' name='[Action (Industry)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[industry]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (MONTH(Churn Date))' hidden='true' name='[Action (MONTH(Churn Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[mn:churn_date:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Plan Tier (Ravenstack Subscriptions.Csv))' hidden='true' name='[Action (Plan Tier (Ravenstack Subscriptions.Csv))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[plan_tier (ravenstack_subscriptions.csv)]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[usr:Calculation_1103952990982144:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;High&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Low&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Medium&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='ravenstack_accounts.csv' id='ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E'>
+            <properties context=''>
+              <relation connection='textscan.05p0m2k00katet1911ulf1038i8x' name='ravenstack_accounts.csv' table='[C:\Users\venka\OneDrive\Desktop\archive (1)\ravenstack_accounts#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='account_id' ordinal='0' />
+                  <column datatype='string' name='account_name' ordinal='1' />
+                  <column datatype='string' name='industry' ordinal='2' />
+                  <column datatype='string' name='country' ordinal='3' />
+                  <column datatype='date' name='signup_date' ordinal='4' />
+                  <column datatype='string' name='referral_source' ordinal='5' />
+                  <column datatype='string' name='plan_tier' ordinal='6' />
+                  <column datatype='integer' name='seats' ordinal='7' />
+                  <column datatype='boolean' name='is_trial' ordinal='8' />
+                  <column datatype='boolean' name='churn_flag' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='ravenstack_churn_events.csv' id='ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C'>
+            <properties context=''>
+              <relation connection='textscan.1irw3xk1snf79s1ep9ll204q3lm5' name='ravenstack_churn_events.csv' table='[ravenstack_churn_events#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='churn_event_id' ordinal='0' />
+                  <column datatype='string' name='account_id' ordinal='1' />
+                  <column datatype='date' name='churn_date' ordinal='2' />
+                  <column datatype='string' name='reason_code' ordinal='3' />
+                  <column datatype='real' name='refund_amount_usd' ordinal='4' />
+                  <column datatype='boolean' name='preceding_upgrade_flag' ordinal='5' />
+                  <column datatype='boolean' name='preceding_downgrade_flag' ordinal='6' />
+                  <column datatype='boolean' name='is_reactivation' ordinal='7' />
+                  <column datatype='string' name='feedback_text' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='ravenstack_feature_usage.csv' id='ravenstack_feature_usage.csv_F0EF8F1E352B40AFAD4014F11ED3A202'>
+            <properties context=''>
+              <relation connection='textscan.1irw3xk1snf79s1ep9ll204q3lm5' name='ravenstack_feature_usage.csv' table='[ravenstack_feature_usage#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='usage_id' ordinal='0' />
+                  <column datatype='string' name='subscription_id' ordinal='1' />
+                  <column datatype='date' name='usage_date' ordinal='2' />
+                  <column datatype='string' name='feature_name' ordinal='3' />
+                  <column datatype='integer' name='usage_count' ordinal='4' />
+                  <column datatype='integer' name='usage_duration_secs' ordinal='5' />
+                  <column datatype='integer' name='error_count' ordinal='6' />
+                  <column datatype='boolean' name='is_beta_feature' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='ravenstack_subscriptions.csv' id='ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A'>
+            <properties context=''>
+              <relation connection='textscan.1irw3xk1snf79s1ep9ll204q3lm5' name='ravenstack_subscriptions.csv' table='[ravenstack_subscriptions#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='subscription_id' ordinal='0' />
+                  <column datatype='string' name='account_id' ordinal='1' />
+                  <column datatype='date' name='start_date' ordinal='2' />
+                  <column datatype='date' name='end_date' ordinal='3' />
+                  <column datatype='string' name='plan_tier' ordinal='4' />
+                  <column datatype='integer' name='seats' ordinal='5' />
+                  <column datatype='integer' name='mrr_amount' ordinal='6' />
+                  <column datatype='integer' name='arr_amount' ordinal='7' />
+                  <column datatype='boolean' name='is_trial' ordinal='8' />
+                  <column datatype='boolean' name='upgrade_flag' ordinal='9' />
+                  <column datatype='boolean' name='downgrade_flag' ordinal='10' />
+                  <column datatype='boolean' name='churn_flag' ordinal='11' />
+                  <column datatype='string' name='billing_frequency' ordinal='12' />
+                  <column datatype='boolean' name='auto_renew_flag' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='ravenstack_support_tickets.csv' id='ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5'>
+            <properties context=''>
+              <relation connection='textscan.1irw3xk1snf79s1ep9ll204q3lm5' name='ravenstack_support_tickets.csv' table='[ravenstack_support_tickets#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='ticket_id' ordinal='0' />
+                  <column datatype='string' name='account_id' ordinal='1' />
+                  <column datatype='date' name='submitted_at' ordinal='2' />
+                  <column datatype='datetime' name='closed_at' ordinal='3' />
+                  <column datatype='real' name='resolution_time_hours' ordinal='4' />
+                  <column datatype='string' name='priority' ordinal='5' />
+                  <column datatype='integer' name='first_response_time_minutes' ordinal='6' />
+                  <column datatype='real' name='satisfaction_score' ordinal='7' />
+                  <column datatype='boolean' name='escalation_flag' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[account_id]' />
+              <expression op='[account_id (ravenstack_churn_events.csv)]' />
+            </expression>
+            <first-end-point object-id='ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E' />
+            <second-end-point object-id='ravenstack_churn_events.csv_42FC45948C2246E781ECE0C0D37D6D7C' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[subscription_id]' />
+              <expression op='[subscription_id (ravenstack_feature_usage.csv)]' />
+            </expression>
+            <first-end-point object-id='ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A' />
+            <second-end-point object-id='ravenstack_feature_usage.csv_F0EF8F1E352B40AFAD4014F11ED3A202' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[account_id]' />
+              <expression op='[account_id (ravenstack_subscriptions.csv)]' />
+            </expression>
+            <first-end-point object-id='ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E' />
+            <second-end-point object-id='ravenstack_subscriptions.csv_4D49D0C340C54BB38C203F843E293C0A' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[account_id]' />
+              <expression op='[account_id (ravenstack_support_tickets.csv)]' />
+            </expression>
+            <first-end-point object-id='ravenstack_accounts.csv_62D8135838214B02AD7A9E13F7A6F08E' />
+            <second-end-point object-id='ravenstack_support_tickets.csv_9EF7B53FF1094A308B5FCE090C2DD2E5' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Highlight 1 (generated)' name='[Action1_F023F6CD959D4F31BC302E86E8F2F7AB]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Overall Churn Rate ' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='AGG(Chrun color)' />
+        <param name='target' value='Overall Churn Rate ' />
+      </command>
+    </action>
+    <action caption='Filter1' name='[Action2_B7A992160C2644398B442218695387DB]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='SaaS Customer Retention &amp; Churn Analysis Dashboard' type='sheet'>
+        <exclude-sheet name='Monthly churn Trend' />
+      </source>
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='SaaS Customer Retention &amp; Churn Analysis Dashboard' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Chrun Rate by plan'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ravenstack_accounts.csv (Multiple Connections)' name='federated.0n7an2p0iksbn516lkoki0ukiyxw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0n7an2p0iksbn516lkoki0ukiyxw'>
+            <column caption='Churn Rate' datatype='real' default-format='p0.0%' name='[Calculation_0819453680181251]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD(&#13;&#10;    IF NOT ISNULL([churn_event_id]) &#13;&#10;    THEN [account_id] &#13;&#10;    END&#13;&#10;)&#13;&#10;/&#13;&#10;COUNTD([account_id])' />
+            </column>
+            <column caption='Account Id' datatype='string' name='[account_id]' role='dimension' type='nominal' />
+            <column datatype='string' name='[churn_event_id]' role='dimension' type='nominal' />
+            <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+            <column-instance column='[plan_tier (ravenstack_subscriptions.csv)]' derivation='None' name='[none:plan_tier (ravenstack_subscriptions.csv):nk]' pivot='key' type='nominal' />
+            <column caption='Plan Tier (Ravenstack Subscriptions.Csv)' datatype='string' name='[plan_tier (ravenstack_subscriptions.csv)]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_0819453680181251]' derivation='User' name='[usr:Calculation_0819453680181251:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[Action (Industry)]'>
+            <groupfilter function='level-members' level='[industry]' user:ui-action-filter='[Action2_B7A992160C2644398B442218695387DB]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <natural-sort column='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:plan_tier (ravenstack_subscriptions.csv):nk]' direction='DESC' />
+          <slices>
+            <column>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[Action (Industry)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:plan_tier (ravenstack_subscriptions.csv):nk]</rows>
+        <cols>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[usr:Calculation_0819453680181251:qk]</cols>
+      </table>
+      <simple-id uuid='{3D9AEF48-F23E-483F-AA97-785DA7269547}' />
+    </worksheet>
+    <worksheet name='Churn Rate by Country'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ravenstack_accounts.csv (Multiple Connections)' name='federated.0n7an2p0iksbn516lkoki0ukiyxw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0n7an2p0iksbn516lkoki0ukiyxw'>
+            <column caption='Churn Rate' datatype='real' default-format='p0.0%' name='[Calculation_0819453680181251]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD(&#13;&#10;    IF NOT ISNULL([churn_event_id]) &#13;&#10;    THEN [account_id] &#13;&#10;    END&#13;&#10;)&#13;&#10;/&#13;&#10;COUNTD([account_id])' />
+            </column>
+            <column caption='Account Id' datatype='string' name='[account_id]' role='dimension' type='nominal' />
+            <column datatype='string' name='[churn_event_id]' role='dimension' type='nominal' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_0819453680181251]' derivation='User' name='[usr:Calculation_0819453680181251:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[Action (Industry)]'>
+            <groupfilter function='level-members' level='[industry]' user:ui-action-filter='[Action2_B7A992160C2644398B442218695387DB]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <single-value-per-nest-shelf-sorts>
+            <single-value-per-nest-shelf-sort dimension-to-sort='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:country:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:country:nk]' shelf='rows' />
+          </single-value-per-nest-shelf-sorts>
+          <slices>
+            <column>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[Action (Industry)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[usr:Calculation_0819453680181251:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:country:nk]</rows>
+        <cols>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[usr:Calculation_0819453680181251:qk]</cols>
+      </table>
+      <simple-id uuid='{E676DEB6-2CF6-4E02-9697-C2A29CA43DCC}' />
+    </worksheet>
+    <worksheet name='Churn Rate by Industry'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ravenstack_accounts.csv (Multiple Connections)' name='federated.0n7an2p0iksbn516lkoki0ukiyxw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0n7an2p0iksbn516lkoki0ukiyxw'>
+            <column caption='Churn Rate' datatype='real' default-format='p0.0%' name='[Calculation_0819453680181251]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD(&#13;&#10;    IF NOT ISNULL([churn_event_id]) &#13;&#10;    THEN [account_id] &#13;&#10;    END&#13;&#10;)&#13;&#10;/&#13;&#10;COUNTD([account_id])' />
+            </column>
+            <column caption='Account Id' datatype='string' name='[account_id]' role='dimension' type='nominal' />
+            <column datatype='string' name='[churn_event_id]' role='dimension' type='nominal' />
+            <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+            <column-instance column='[industry]' derivation='None' name='[none:industry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_0819453680181251]' derivation='User' name='[usr:Calculation_0819453680181251:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <natural-sort column='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:industry:nk]' direction='DESC' />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:industry:nk]</rows>
+        <cols>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[usr:Calculation_0819453680181251:qk]</cols>
+      </table>
+      <simple-id uuid='{C0835C3E-8A14-4FD0-8428-01EEE48E90BF}' />
+    </worksheet>
+    <worksheet name='Monthly churn Trend'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ravenstack_accounts.csv (Multiple Connections)' name='federated.0n7an2p0iksbn516lkoki0ukiyxw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0n7an2p0iksbn516lkoki0ukiyxw'>
+            <column caption='Monthly Churnes Accounts' datatype='integer' name='[Calculation_0819453684604932]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([account_id])' />
+            </column>
+            <column caption='Account Id' datatype='string' name='[account_id]' role='dimension' type='nominal' />
+            <column caption='Churn Date' datatype='date' name='[churn_date]' role='dimension' type='ordinal' />
+            <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+            <column-instance column='[churn_date]' derivation='Month' name='[mn:churn_date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0819453684604932]' derivation='User' name='[usr:Calculation_0819453684604932:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[Action (Industry)]'>
+            <groupfilter function='level-members' level='[industry]' user:ui-action-filter='[Action2_B7A992160C2644398B442218695387DB]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[Action (Industry)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='omit-on-special' field='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[mn:churn_date:qk]' value='false' />
+            <format attr='break-on-special' field='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[mn:churn_date:qk]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[mn:churn_date:qk]' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[usr:Calculation_0819453684604932:qk]</rows>
+        <cols>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[mn:churn_date:qk]</cols>
+      </table>
+      <simple-id uuid='{59D54A47-D628-4028-8D93-A2B6D47A4693}' />
+    </worksheet>
+    <worksheet name='Overall Churn Rate '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ravenstack_accounts.csv (Multiple Connections)' name='federated.0n7an2p0iksbn516lkoki0ukiyxw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0n7an2p0iksbn516lkoki0ukiyxw'>
+            <column caption='Churn Rate' datatype='real' default-format='p0.0%' name='[Calculation_0819453680181251]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD(&#13;&#10;    IF NOT ISNULL([churn_event_id]) &#13;&#10;    THEN [account_id] &#13;&#10;    END&#13;&#10;)&#13;&#10;/&#13;&#10;COUNTD([account_id])' />
+            </column>
+            <column caption='Chrun color' datatype='string' name='[Calculation_1103952990982144]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_0819453680181251] &gt; 0.6 THEN &quot;High&quot;&#13;&#10;ELSEIF [Calculation_0819453680181251] &gt; 0.4 THEN &quot;Medium&quot;&#13;&#10;ELSE &quot;Low&quot;&#13;&#10;END' />
+            </column>
+            <column caption='Account Id' datatype='string' name='[account_id]' role='dimension' type='nominal' />
+            <column datatype='string' name='[churn_event_id]' role='dimension' type='nominal' />
+            <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_0819453680181251]' derivation='User' name='[usr:Calculation_0819453680181251:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1103952990982144]' derivation='User' name='[usr:Calculation_1103952990982144:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[Action (Industry)]'>
+            <groupfilter function='level-members' level='[industry]' user:ui-action-filter='[Action2_B7A992160C2644398B442218695387DB]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[Action (Industry)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <color column='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[usr:Calculation_1103952990982144:nk]' />
+              <text column='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[usr:Calculation_0819453680181251:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontsize='48'>&lt;</run>
+                <run bold='true' fontsize='48'>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[usr:Calculation_0819453680181251:qk]</run>
+                <run bold='true' fontsize='48'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A87A1D42-DE6A-4C19-BEAB-BEA1C5EF1672}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='SaaS Customer Retention &amp; Churn Analysis Dashboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontsize='20'>&lt;Sheet Name&gt;</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontname='Benton Sans Book' fontsize='12'>Interactive analysis of churn trends, plan performance, and customer segmentation.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98120' id='15' param='vert' type-v2='layout-flow' w='99034' x='483' y='940'>
+            <zone h='9283' id='16' type-v2='title' w='99034' x='483' y='940'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='88837' id='11' param='horz' type-v2='layout-flow' w='99034' x='483' y='10223'>
+              <zone h='88837' id='9' type-v2='layout-basic' w='99034' x='483' y='10223'>
+                <zone h='29246' id='3' name='Overall Churn Rate ' w='47908' x='483' y='10223'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='54246' id='5' name='Monthly churn Trend' w='51126' x='48391' y='10223'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='29787' id='6' name='Chrun Rate by plan' w='47908' x='483' y='39469'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='29804' id='7' name='Churn Rate by Industry' w='47908' x='483' y='69256'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='34591' id='8' name='Churn Rate by Country' w='51126' x='48391' y='64469'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontsize='20'>&lt;Sheet Name&gt;</run>
+                <run fontalignment='1'>Æ&#10;</run>
+                <run fontalignment='1' fontname='Benton Sans Book' fontsize='12'>Interactive analysis of churn trends, plan performance, and customer segmentation.</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1350' minheight='1350' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='18' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98120' id='17' param='vert' type-v2='layout-flow' w='99034' x='483' y='940'>
+                <zone h='9283' id='16' type-v2='title' w='99034' x='483' y='940'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='222' h='29246' id='3' is-fixed='true' name='Overall Churn Rate ' w='47908' x='483' y='10223'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='54246' id='5' is-fixed='true' name='Monthly churn Trend' w='51126' x='48391' y='10223'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='226' h='29787' id='6' is-fixed='true' name='Chrun Rate by plan' w='47908' x='483' y='39469'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='264' h='34591' id='8' is-fixed='true' name='Churn Rate by Country' w='51126' x='48391' y='64469'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='226' h='29804' id='7' is-fixed='true' name='Churn Rate by Industry' w='47908' x='483' y='69256'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{E6D4B7C0-6194-4E47-B1DD-93F54E33C088}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Overall Churn Rate '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='marks' />
+            <card type='filters' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0n7an2p0iksbn516lkoki0ukiyxw].[usr:Calculation_1103952990982144:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:account_id:nk]</field>
+            <field>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:churn_event_id:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6DA8BEF6-8F8B-4BF9-84A5-10D247769E48}' />
+    </window>
+    <window class='worksheet' name='Monthly churn Trend'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:account_id:nk]</field>
+            <field>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[yr:churn_date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{BCAAC552-0B5C-4F93-8FF7-37560FD06848}' />
+    </window>
+    <window class='worksheet' name='Chrun Rate by plan'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:plan_tier (ravenstack_subscriptions.csv):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{B62FE73C-0FA9-4337-9500-6FF5ABD89690}' />
+    </window>
+    <window class='worksheet' name='Churn Rate by Industry'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:industry:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{9900E174-F3AE-4599-80AA-45522A96A385}' />
+    </window>
+    <window class='worksheet' name='Churn Rate by Country'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0n7an2p0iksbn516lkoki0ukiyxw].[none:country:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{DA157EA2-08A0-44DB-8579-CC5ECBFECA16}' />
+    </window>
+    <window class='dashboard' maximized='true' name='SaaS Customer Retention &amp; Churn Analysis Dashboard'>
+      <viewpoints>
+        <viewpoint name='Chrun Rate by plan' />
+        <viewpoint name='Churn Rate by Country' />
+        <viewpoint name='Churn Rate by Industry' />
+        <viewpoint name='Monthly churn Trend'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Overall Churn Rate ' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{546E05B7-1A18-49FC-A7ED-8F3C3A34F556}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='147' name='Chrun Rate by plan' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Churn Rate by Country' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='187' name='Churn Rate by Industry' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAAC7CAYAAAAzOZEFAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAAXDElEQVR4nO3df1xUdb7H8VeO6NA4I6jIgEKiiKipqJipaKitXszEtDRdurBmu2V7+921
+      bNdubta6enO9tx7dzdyra7+3TPwROato/rqWuqImEJDgkAOIIj/kV8Nx7h8MMPyYYVAE9Hye
+      j4d/cDhz5ss4b86Zw3l/z202m82GECrVqb0HIER7kgAIVZMACFWTAAhVkwAIVZMACFWTAAhV
+      kwAIVZMACFWTAAhVkwAIVZMACFWTAAhVkwAIVZMACFWTAAhVkwAIVZMACFWTAAhVkwAIVZMA
+      CFWTAAhVkwAIVZMACFWTAAhVkwAIVZMACFWTAKhcWVlZew+hXUkAhKpJAISqdW7vAYj2F73s
+      k/YeQruRPYArSgUlJRUo7qxrLaWkwq01b5yOMIabzE23BzDv30bhiFkM797gG0Wn2PYN3DNr
+      OA2/dc3y97L2Pfj18iiMza175hPW5tzH8qim1zTv38TeTGcP9mbk7CZ+ppZqZgyisZsuAAXp
+      SeSENPFmKT9PUhLc1ZoBaEJuwgp2+i3n0bCWPc5vdDTRw+1f5Cfy5w/hl89MwQcADdpurTtO
+      4Z6bLgA3Kw+dF141X1R40qkT6L0clol2cUsHoDQjgY2b9mGuAjoHEhkbR1Swzv5dhYvfm9i6
+      fT8/FgN0xSfsfv71wdH00jS1NTP7N+0l+afLZHtuYtPJ6qXeI2czq2Z3pBRz7uA3fLH7KJk5
+      lXTtF8Gip+YzRNfU9pwOmoSNm9hXPWgCI2OJiwqmbhNWLhzdwgc7k8ivBEPfsUQtnE2Yd82P
+      1QpjUJFbNwC5JtattzD9lTd40qABazbxq9dhWrSMaUaAK1ws8edfnlpBX50HKBVkJbzF6k91
+      vLEwlMYZ8GN0dDR+iZns8Y0memj1Uo3DsUvugXiOPBjDkt/PR6tRsOxYyer4VNYuDHV30JjW
+      rccy/RXeeNKABivZ8atZZ1rEsmlGQMGSsJp1mZN45qUH8dNCRc4/SS0BvFtrDOpyEwYgl11r
+      X2Z/w/NXV8sp0k2v/TI10YTvglWMNtjfyh4BzJzhy9LEVKYtDAW6EzpuRN3jNVr6RU1nwMpM
+      8glt4kOvBzovL/SenaoPZ5o4djFGPsL8MTWP1OAfPgbvnRXu/2ipiZh8F7BqtMEeQA8CZs7A
+      d2kiqdMWElpxjK1HQnl8eQR+9h9L6zcGx48j1z0GlbkJA2Bk+rPLaXSiIzeBFe/VfJGPOasH
+      xgklFBY6rKPzpluWmXxCqz98KsWcO3OMEyeyKQLgEucYfMN/AmfyzVn0ME6gpP6g8e6WhTkf
+      QnNTSAkazZImD9HEtbgJA+AOBaWqmJQ98Vxs8GYJujOYLgAVp9n8hy0oUY8wI3pU9TLO8Ml/
+      Fbf5aGsoShXFKXuIbzxogrsAikI3g5wuak23aAB86G28jfLJscwJcrJK6nf8OO4x/iPC32Gh
+      Dg/aLwA+vY3cVj6ZWGeD7hOAftdZCgiiR9sO7ZZ1i/4lWMPQu4I5vCWRi45/GFWKScvIta+i
+      4UphocNfea1cOHqcs81s2curBxnpGe79dbiFNEPvIvjwFhLrD5ritAxyAXwmMFln4svjxQ7P
+      X0pp6Q0YjErconsA0IY9zOM5G1i7dC89BwWjL8kkI68zdy54khCAIdOY9tVbLH9rECE9fyY7
+      +TJ3PBhOADbX271rDpP32x/X9SKXBv2K5+5tpb+8asN4+PEcNqxdyt6egwjWl5CZkUfnOxfw
+      ZAiAjnG/eozCDatYmuDPMN9KMjIuM2rxH3hgYOsMQW1us9lsrv/Hb3Y11/N46PDSeTT8JhUl
+      JVQoHui8dDT8rouNVj8OLXq9tolTpter+XFZSwsptbZ03I2VlZWx4PVt17GFm9stuweopdGi
+      99I6+yZavRfOvutio9f4uNbbfr2/LItrduvvAYRLZWVl3H777e09jHZzi34IFsI9EgChahIA
+      oWoSAKFqt/5ZINEs6QSLW4N0gltM9gBNKuLUtq2cuNxweRCTYycRCJz59GV2936Opyf7uLVF
+      6QR3TBKAJpVzPqmc4KceZmi95R61zSz/MXOZqtW7vUXpBHdMEgCnqgswzv7a6t0/vKaE5d7W
+      pBPcIUkArpF5/yay+sUyKbB2AdsuBTGi9LB0gm8iEoBrVJB+mHSDQwAK0vl6036KfhnHb16Z
+      j85Dofjgu6yIT2WNdII7LDkL5JSV0sJCCh3/NTNLnHH6Yh4Z05fqi041GIIHYChveSc4rmEn
+      2JRIKkBNJ/g3EfhpNYCmuhMcWLeJ6k6wH1pN9Rj8w8fg3ZIxqIzsAZzK5tv4eDIcF3mPZPYN
+      nHhLOsFtTwLgVH+mxMbSwgngrot0gtueBKADkU5w25PPAB2IdILbnuwBOhLpBLc5aYR1SNIJ
+      biuyB+iQpBPcVmQPoHLSCRZCxSQAQtUkAELVJABC1eQskJBOsLhB2rqjK53gFpM9gDvM+9nU
+      ZKG3riPcJIeOrnSCOyYJgDsK0snUT+KZKQ0L8B64W7SSTnDHJAFwUydPPV5N3RnPTdIJ7pgk
+      AK3IeuEoWz7YSVJ+JWBgQIAVnN2iyRnpBLcpCUArUSwJrF6XyaRnXuJBPy0apYJL3/yFdypb
+      shXpBLc1OQvUKpLY+N/lLFi1hAg/+x1jNFp69mjZgX2+6a8cG7GEuQOuUlJYSGFhKfp7HiL0
+      8F8x5QOnN/Nm3v2sWiKd4NYie4DW4umJ53VuQiqRbU8C0Cq0eBZbyFXAeB2FdalEtj05BGoV
+      Axk1Ko2vTJb6t13NvdSirUglsu3JHsBNubvW8vL+hr8vwoh5cz5D0RAa/RhD3/4Tzx8fyMgA
+      yE6+zMBheujZgieRSmSbk0JMq6qpMmrQ6vX2D6LXsx2pRN5osgdoVa11+1SpRLYV2QOonFQi
+      hVAxCYBQNQmAUDUJgFA1OQskpBIpbl5KRYnUIK+DuvYADauN2t4MuXsCo+6ouSNLaz1NG9Qf
+      7fL3ruU9fi01yGukrgDUqzb+TIH5ew5tXM7nxvm8uHgcvVopBVJ/vHmoKwDUrzZ6eU2h//Cx
+      JG14lT/HG3ltTlCr7Amk/njzUF0AGtMRFreI75cmcGzGEsbarz9QLh7no/Wf8X1hJ0DHnfMe
+      Z+HoXmiAC0f/zgn9/UwPdbxYQSFz78dYBsYwoa97z6wUp2HavJk9meWAJ/4R81h8/zAMtSlU
+      KE4zsXnzHqpX8Sdi3mLuH+bikE0p5vT29/ni23wqga4+g5k4ay5Tg6UT2RQJAIBmEIND1vND
+      FowNBSpOs3n1Lnr99nVWBXiAUszRDWvY3GUZccO09PbtwoHPjnB3aGTdDfOUHzi0G0ZNcvM5
+      lVQ+XbkF7aMvsirEgEYpJi3+bVZuhtfihqEFlNRPWblFy6MvriLEoEEpTiP+7ZVs5jXihjV9
+      pVDBvnf50voAz70egkGjUHEpjb3JFgiWy0WbImeBANDQo5eWmuZg0ZFdmCMXMTPAfp2lxsCY
+      WeMw7zpCEUDgWCaUfcuxgrotKKf/j6Sh4Qxx8xiq6MAOksfHMCfE/ttcYyBkTgzjM3ZxpAig
+      iAM7khkfM4cQ+y5BYwhhTsx4MmrG0YQLebkY+w+w70U0aHsOJmqivPmdkQDYFV2uezebs87T
+      t5e2/j2CtQZ6n83CDICRsRPg2Imax1Rw7LCZiRHuF8/NWecI7t9wSq1ABg05z4+ZAGayzgXT
+      eJVBDDn/I85OMg2MnMbFza/zfsIhUn8qQc6QuiaHQADkknN+IAMerP5KURR++i6e+OT6a3mO
+      7V97yNMjfCyadd+SOzUKY8VJjueNYqbTKeIaU5RuNFXvNRhqnkFB6Wag8SoGDC5OoWr8o1i2
+      +m7OppzgVPzbvJ/5MyNinuKR2nlThCMJAFCatJN9t4ez1P7G6u3bgx495xM7zsUV+d3vZmKv
+      tziRG8XkzKOUTFrofIrEJhj9Pdl9rgiCHN/NFZzLqsR7KIARf8/dNF7lHFmV3gx1tXEPb/oP
+      n0L/4VOYXXqc916N53RYHMNaMD61UPchkFJBztGNrPq4kjmPRtYWzf3Dx1Kw83NS6nVtrVxI
+      y3Q49tYyYrQXR749zZFDpYSPbFlN3Th2EiR8TpLDc1gztrOzYBLjgwCMVK+SRN0qVjK276Rg
+      0nin823lZmfVP+zReqLeq/2bp7o9QG2392o5Vyq74j/6fh5bHkGA41lC4zSWPPAR77z6Al2C
+      huGPhWRzGYFTF/FoSN1q2vBIBi57ly8CFrK6pdM09Ijkidg81rz6GoeG9aPblWxOW3yY++wc
+      jLWrPEFs3hpefe0Qw/p140r2aSw+c3l2jou/+mbtZOXbuXgHB9OzyxWyT1voG7NMfvs7IY0w
+      l6yUFpZi1WjR67VNnHuv7u5aPfTor7UAbC2lsNQKNNf/BTx0eOncaQDbx03z3WTpBAsXPNC5
+      nBC3FTrAHjqam3O35f3f5sYtasgeQOWkEyyEikkAhKpJAISqSQCEqslZICGd4JuFtVQu7hKt
+      q233AEoxafu2suNASu39rSbO+gURAe6VNc58spac+5ajtvpr/t51vHXhXt6c7/IKIHEN2i4A
+      igXTmj9x0PeX/PrFBfTVKpTk/EBipgUC5Hp1V/SDpjL3Dn+HJUlsWJHDfcujUNnvglbXZgHI
+      Nb3P/oFPO/RuPdD3HUG0m/VBNdP630l4ew/iFtVGAUgl0dSD+950VjqvJP0fn/BTcAyTgxzX
+      qCB113ZKRj7EmN7VS65kH2Tz/27lu6xKuvqFMjUmjijHvmsztxktOrWNk16zmNTnIsc//xvb
+      k/rw0JvzGdpsl7aUjISNbNpnpgroHBhJbFwUjk+tFKex77Mv2P1jMXT1YXDkA8yLDEJbdIpt
+      J72YNcnxgmkz+zdl0a/mTvO16/Th4vHP+dv2JPo89Cbzh1aP+RvuYdbw7hSd2sbWExmcvVzO
+      1k0X7PclC2Jy7Fgq3XwNRZ22CUC+mSzvAUxxetFMVwJ8qvhLwjHGLRlbd21NxUkS/2FlyvSa
+      Bbmk/6hn8QtreMQDrBcOsv4/12F6dhnTjNXfd32bUSg/n0S6NZyKj98hOXQei5cG40vzXdpc
+      0zrWW6bzyhtPYtCANTue1etMLFo2rfowpDSJjSu/wjvuCVYs9sbDepmUU3lUAtry8ySlX20Q
+      gALSD6djqAlA+XmS0q2EV3zMO8mhzFu8lGBfasecxF3MGt6dbiGTiQ7sySeZeUyNrplqxQMd
+      XVHceg2Fo7Y5C6QoVPXxc3m8qg37BRMt+zjk0LOtOHEUy8QI6oqGRkZGjqC3/YJIj94RLJpt
+      YO9he0EwNRGT7wLiRhtqD7MCZs7A15RIqsNzpXy8nuzpy3gmegR97Vdguu7SppJo8mVB3Oja
+      GRs8AmYyw9dEon3D5t1fUj77aeYM9q6+otPDm8GjQ2nR/FcpH7M+ezrLnolmRF8vmrrwU6PV
+      4+Wlw6OTZ/VUK15e1V+7/RoKR213GjTvAvkuVwhk4mTYe8Bs/7qII4cKmDDWdc9KGzQAz4sF
+      KEC+OYseRm/7PXbt/0p0eHfLwuzw5AGzX+DRsPpnnlx2afPNZPUw4l3isN3CEnTe3cgy5wP5
+      pJ7pSsj1Tj0SMJsXHg3j2rdyba+hmrXNIZBPb4z5KeQr4OPi2vQeEyLx/91+kmfGMKToGN8q
+      E3isBac5mr3Prl23bo3fYi67tIpCVXEKe+IvNvgME8SdwV2AcpQqA15698fapG7druPNX+16
+      X0O1aZsAaIYyYuBGEr97gCHjXPwXa8OJDPs7+449iPHKMXSTnm72frgVmT9S3isUDW7cZ7c5
+      zrq0Pr0x3lbO5Ng5TqqI3ekbmMXJswrj3J0X5Ua5htdQzdroEEhL+OwZFG9dz55sq8NyK9nZ
+      uQ5faxhy71Qu7vuQL/frGTPSddVEKT7Oh1srmB5Z/bZs9j67Lrjs0mqGclfwYbYkXqTelovT
+      yLBveMg940nfmoDjj6eUllIBoNHQ+XyOwxgUitPSOd/MmJzrjnd5GhlN3h+4Za+h2rXZ3wE0
+      /lG8+NsuvPc/L7K9yhPPTnDVakU/+Sl+F+CwonEy0/XP8Umf3xLX8P+uSzH71i4lKXAIvSoz
+      +MHSnYmPP0Fkza+4Zu+z64LLLq2WsIcfJ2fDWpbu7cmgYD0lmRnkdb6TBfYNa4Ki+bfpH/HO
+      y6+gHxRC14vJmA2zWPbkBLQ+E5jRZwV/fP0sIwPAkpqP4e7g62iSBTF9fnfeePV1Tg7zpTJD
+      xy/+sLCu9+vqNRT1tEsjrLrj6qyvqpD8wXL+OWoFMU0eTtjvoYuznq7DOi7us+tkZM12aWvm
+      4/fQNX2WBqWCkpIK0DbsCbfWPYQdh1vdJ248luZewzrSCW4HrjquSv4+vjJHEBPj7D/OnR7u
+      tXZ1m+/SarR6vFxtWKNF3+QKrXUPYQdO+sTNv4aiRgfqBJ/h05c/4J9XezL16WeZ5i//eS3X
+      8tdQ7Z3gDhQA0R7UHgApxAjKysraewjtRgIgVL0HuKkaYUK0NgmAUDUJgFA1CYBQNTkNKlRN
+      9gBC1SQAQtUkAELVJABC1SQAQtUkAELV5FogUY81+yCbPtjKyaxKuvYbweyYWCICmqkU2ScV
+      +2xfBpfoSXDkPBbfP6x2CpmaScU+2P8TXQfcR0xsBPU2WXCCbd9qmRw1mOudV6DFbELUuLTX
+      tvr51bZd5p9tNpvN9rN5l23186ttey+5elCVLeXD523LNp+yFVXZbLaqItupzctsz3+YYquq
+      3exa2x+3m20/22y2Kyfet/3+/RO28trHX7Ed+8tq2/bzVU1t/IaTQyBRK/XrHWjnPsE0+69n
+      j4BpPDFXy46vU50/qOgAO5LHs3iB/Te+xsCwBYsZn7yDA0UARZw61plJ9wbgAejCorjrfBLp
+      9ocrqfHs7jWXqHYqQEkAhJ2FjLR+jB5Zf9oa3cjR9EvLwOLkUUpGGpdGjaTedKSaIEaOukRa
+      hgKUU17miWdtF7QTGhT77Bq5mBK1zIt2NmfsjScBEHYXyKv0x9iwtKw14l+ZxwUnj8q/kEsf
+      P79Gy/38+pB7IR/wwqvHRS7VTtdYTjmeaIGCffEUT4kmSGOltLCQkna4+4l8CBZ1PD3ts03X
+      W4hn44UNHta46q/19IRCAC133RvA639LwH/haDj4Gel3xzKn9Dgf5Y1nzsQ8TGve5WT3YG7P
+      y0A38yXiwq53fjz3SQBEnasKVxsvRGm8sB5FUaDBQUz1smqa0IW8oDvIPxL20jXsVzw3wsDp
+      zV8TNCeOsn2rSLn7JV6M0IGSyZZVX5I8LIa2mmBPDoGEnRbPIgs5DY9ClBwsRZ5Op3Px9Lwd
+      S05eo+V5ORZud9h16AIimB07n6gRvemUGs/hgFmM04E5q7JuUmFNEP19z3LO9SzKrUoCIOz6
+      MWBgGik/1E+A8kMKaQMH0M/Jo7r3H0jVmRQK6i0tIOVMFQP7NzE5vJJJ/NceTJvYMWYslQAI
+      Oy3hU0ZxeqsJS00GFAumracZNSW8bg9w+SzHvrdUz3kKEDiRezUmvkyqm6i0NOlLTJp7mdho
+      VnYFS8IXXI6cUXvWKLBfV9JqJjlVMkg/3587fG7Ez9c0KcQIBwoW0xr+tKcTQ4d4UZh8hqtT
+      /50XpvnXHeEnbeA32/x5zfEGfaVJbFyxkXOBI+lHFifMdxC3PI6Gn2UVSwJrPvPksWci62as
+      ViyY1rbfh2AJgGikZv5TTaP5TV2pmVe1pfOxQs28qYrWyXyrN5AEQKiafAYQqiYBEKomARCq
+      JgEQqiYBEKomARCqJgEQqiYBEKomARCqJgEQqiYBEKomARCqJgEQqiYBEKomARCqJgEQqiYB
+      EKomARCqJgEQqiYBEKomARCqJgEQqiYBEKomARCqJgEQqiYBEKomARCqJgEQqiYBEKomARCq
+      JgEQqiYBEKomARCqJgEQqvb/Gzxr+rUVZVMAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Monthly churn Trend' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAAS2UlEQVR4nO3da3BcZ33H8e/etau96W5dVrIk23FsJw6Q2EmAJJQ0CWECxQZe0HYKtNMy
+      0wCd9k1fdaZv+44plFLaF51JadNyiUlCmiYhLeCQBNuJL7J1se5aaaWVtPf7nvP0hSM31Lsk
+      XmuPtHv+nxmPX8i752/N+e3zPOf89zkWpZRCCJOy7nQBQuykbQ+Apmnb/ZZC1I2MAMLUJADC
+      1CQAwtQkAMLUJADC1CQAwtQkAMLUJADC1CQAwtRuKgBK15icuopSivh6hMhGgmI2xZUr42Ty
+      pXrVKETd2G/mH5dLBTK5HNe653QSyST5WJ6RfUMsLKwwOjyAUgpd1+tSrBDb7aZGAIfLg9t1
+      LTM+nx8ApRQWiwW2/haigdzUCJDPJCjki6ysRtGzCQqZAr2DIWanF+gL7cVisWCxWLBaZWkh
+      GoNlu78PoGkaNpttO99SiLqRj2phahIAYWoSAGFqEgBhahIAYWoSAGFqEgBhahIAYWoSAGFq
+      EgBhajcVAF0rMXb5CkopwgszTM0skE/HGRu7TDJbrFeNQtTNTTXD6ZqGpnQUJbIFGy0UmI1E
+      OXBwlLnZFbwjIWmFFg3lpgJgd7bgtF8bNHRdQ0fHYrWgazoKi3SDioZz0+3Q5ZLGymqCoM9J
+      Xncz0uFlfn6J/ne1Q8v3AkSjkHZoYWoyVxGmJgEQpiYBEKYmARCmJgEQpiYBEKYmARCmJgEQ
+      piYBEKYmARCmdlO9QNepEpfHxinoNga7fSxHY7TvGaS/K7jN5QlRXzUGQKdQKJGLx1jxuDh0
+      5BBz02G0dh+6rrPN7UVC1E3NzXCxjShLy2sEvU40qx0NN6NDe6QZTjSUmgOQy6ax2l047TYy
+      2Sye1lasFosEQDQUaYcWpiZXgYSpSQCEqUkAhKlJAISpSQCEqUkAhKlJAISpSQCEqUkAhKnV
+      HIB0YpPoZgKlaywthdF0aYATjae2blA0ZhdWsCmddMyFP9jGzMIK+/f2bW91QtRZze3QSitR
+      0BQ2zU2wPUhsM4ymadIOLRpKjSOABbvdjsUKbUEPE1emaO8ZuN4EJ81wolHU3A269TKLxYJS
+      6vqO0NINKhpJjSMAv7YFumyHLhqVXAYVplZ1BJicnGA9PIOtfYTjR28zsiYhDFN1BAjPXGGz
+      6KSYjhlZjxCGqjgCKKUYOniU4aEQU1NzBpckhHEqBiAbW+XFF1/kwOgIwZ5ho2sSwjAVp0Ct
+      7Xu4+/A+Esk0NkfNF4qE2PWqnt0b8TSHjxyhraPdyHqEMFTVRfDI3hDzc3NsJJJG1iOEoaoG
+      wNXiwdfqZGpy1sh6hDBU1QAkY+vMzYcJVpoCKY3lpUXGL0+STscZG7tMMluoZ51C1EWVNYBi
+      fWMTfyBAqZC/8ccWG339/SRSk0QjUQ4cHGVuNoJ3JISu6/WtWIhtVHURbLfbcVit2B2Oij9P
+      bUTwdfRSSqyiaxoKCxbLtT9Wq3RYiMZQJQAW+kcOMjQ4wPziasV/odla6OsIUPbZmJ8P0x/a
+      ez0A0hwnGkXVduhXXngGh8dPHi+PPHjsfb+htEOLRlJ1CtQ7tI/QQD8L4aiR9QhhqKoBWF+a
+      ZXFxAaevj8NGViSEgaquVu++7yM4rVY6OuS5X6J5VRwBzv/iBV4+H6arI8CDDw8ZXZMQhqm4
+      CNbKRRbnZ3j7/Bj77ribI/vffwhkESwaiTwiSZha1UXwG2++ztrCVZxd+3j0wXuNrEkIw1QN
+      gFPP4+87QMDnM7IeIQxVtRcom82TyBVwyF1d0cSqXga12W1sRhbR7R4j6xHCUFV7gVwOO95A
+      EK+vcgBWluZIl2z0d3iYXYzQNzRKm7eljqUKsf2qrgFWN5Mcvesugu2VvhJZYmZmid6hvayu
+      xbjt4H7mZlfwDw/I5riioVQNgMNqIZ3J4PG1VfiphfbObjylNJGSlT2lEjoW2RxXNJyqAeju
+      aCNZKFf5NLezpztAKq9zJBRgcXmN0GCojmUKUR9VA2CxWlmdu0quZGNgT+cNP2/r7GFrbBge
+      3luX4oSot6pXgZyuFlq9raQSsjWiaF5VRwBXSwt2h5sj+w4aWY8Qhqo4AuiaxoXLE4yO7qMj
+      4DW6JiEMUzEAc5MXKWmKCxfOE17bMLomIQxTMQBr4QgPPXGCJz75ccJz80bXJIRhKq4BhkdC
+      PPvvT+O2lhm+436jaxLCMPJ9AGFqVa8Cjb31OkvRNPsOHmYk1Is0hYpmVPU+gBVFIhFjdvIC
+      l6aWjKxJCMNUnAKtheeYWYzgcDjo7hsk1Nt1wwtTiRiZgk5PZ5Dw8gq9ff3YrBaZAomGUnEE
+      cDhbSG+ucu7cORYj6xVfGF6JEAz4WJqdxu1pYWZ+pa6FClEPFdcA3mA72aLGo48+hi9QqRsU
+      2vxexi5cwhf009cWILYRRtM0aYcWDaViAMIz41hsDi6NXWLv/sO03XA3WCOXK+JwtdAZ9DBx
+      ZYr2npC0Q4uGU3ENUMgk+OFzL3D0yO1ML27yxGMfu+GFWy+zWCwopa7vCC1rANFIKo4AVruT
+      4aEhHM5WPnL/voovfPcW6LIdumhUFQPgcLmJLs8SjycpW120+VuNrksIQ1S9D+B1u0lnMhRK
+      ZSPrEcJQVQMwMBDCZrXgbpGdHkTzqhIAxZWr83zsoQ8zcXnM2IqEMFDFACQ21+jsCPL0f5zi
+      wCF5PIZoXpUDEF1hIRJjeGQ/Aa/b6JqEqLuty/gVrwL17j3A6GaK8EqExZV1ejvlKTGiOehK
+      8fPzC/z49Dg9bd7KAZg8/zpvTyzT4ffgdMhNLdEciiWNf/7Pt0lkCvzVHzzIRjInX4gR5hCN
+      Z/jbH7zJkZFuTj5wOzbbtdl/1S/EvBddKzIxNc/wQBfT88uEhkfxe1zbVrAQ20EpxeW5KP/8
+      4nl+9+E7uHO059e7GGodARZmrrKeKtDW6mRgeJC52QijIyE0TcNqrXp7QQjD6Erx49OTnBlf
+      5qsn7qGn/cYtfmoaAVQ5TyKTJxXfpNXZg6ZpKCxYLNf+SADETkvnivzT82/hdTv56y8/hMNe
+      eVp+S2uAWCxGa4uD+aUIfaEhWlscsgYQO24+EudbP/oVv33PKB//0DDW39CsKYtg0TSUUvxy
+      bIkf/uwKX/n03ezrr/Rsi18nARBNoVTW+N7LlwhHk3z15DF87/OCjARANLyNRJZvnzrDaH8b
+      n3voMHbb+1+D1nwZVIjdYGJhne88e5YvPHwHd9/Wd9OvlwCIhqTrip+8PsXpS4v8xefvo7/L
+      X9P7yBRINJx8ocx3nz8HwB8+/gE8LY6a30tGANFQVjZSfOP7b/DA0SEeO77vN17ifD8kAKJh
+      vHF5iadfHeMrn7qbA6GObXlPmQKJXa+s6Xz/vy8zvRzjTz71IToDlR/eXgsJgNjV4uk8337m
+      DH2dXr7w8B1VWxpqJVMgsWtdDW/y96fOcOKB27n/SH2eQ11jAHQWZ2eJxjOEetuIRGO09wzS
+      3y3fHBO3TtcVL5+d4dW35vjayeMM9gTqdqwaA2DF52tlYTVOKl3k0JFDzE2H0Tp8sjmuuCWF
+      ksZTL10knSvyl1+4n9YWB+Vy/famqi0AeplsUSfosKBZdBbm58HZKpvj1oFSivlIAofdSmfA
+      g8vZvLPW1c003/jBG9x7aIBP3rcfmwFt9bUtgpUil8uBxUZLi4NsNofb48FqkQdkbCelFM//
+      coo3r4RpdTtYT+Rw2K20+9zsafcy0O0n1OWnI+DB63beVA/MbqKU4q2pCN97+SJf/MRdHN7b
+      Zdh+s3IVaJdSSvGT169yZT7KkyeO0eK0o5Qimy+xnsgSXk+xvJ4ivJ5kLZYlWygRaHXR3+Vn
+      oMvPQJeP3g4fQW8LNqtlxzYwVkqh6QpN14mn88RSedbjWWKpHBvJHPF0nvVEFpfDzh9/6oP0
+      tBn7YHYJwC6klOKFN65yaXaNr3/2OC7He097dF0RS+VY3kgTjiZZiiZZXEuSLZRw2Kx0BT0M
+      dPnp6/QR6g7QFfTgdtXeQrClWNJIZQskMoXrJ3P0nRN8M5Ujmy9R1nSsVgtet5OugIfOYCtt
+      3hY6Am6C3hbafW78ra4dCakEYJdRSnHqFxPMLMd48sSxW96Wpqzp5ItlVmNpFleTRDavBWQt
+      ngXA3+qiv9NHqPtaOLrbvPjcTpRS5ItlUrki8VSejVSOzWSOjUSWeDpPMlsgmy9hAXweFwFv
+      C0Gvi86Ahzafm86Ahw6/G0+LA7vNit1m3ZXb6EsAdhH1zpe4p5c3efIzt37yv9ex8sUy8XSe
+      yGaa+UiCpWiS9USWVLYIQKvbgc/tJOhz0+5z0+530+ZrocPvxut24nY5aGnwRbkEYJfQleLU
+      z8eZXo7x9c8e3/Y7nqKyxo5vk9B1xdM/vUR4PcWffe7ehr2a04jkN73DlFI8/eoYyxspvnby
+      uJz8BpMRYAfpuuLfXrlEeCPF108el31Yd4AEYIfouuKply6wkcjx55+/15C7nuJG8lvfAbqu
+      +JeXLrCZzPHVk8fk5N9B8ps3mFKK7718kXimwJMnjsmcf4fVPAVamJ0iup6mt6+N9Y0kwe4B
+      Bve8905cZqbr107+TL7En/7OPVitu+/GkNnUHICO9nYSOUU+p3H4jkPMTS+haQFph65C169d
+      7cnkSnzp8bvQdQ1d3+mqRI0B0Dhz5m36hkZwOjSmJqdwejp2pB16LZZhcnGDew8P7NrphKbr
+      fO+lC2i64o+e+NCurdOMarwTrHj3q7bu/lp2oB06my/xr69cYnxhnY99YC8fvXMIn8dp2PHf
+      S1nTeeq/LqArxRcfu0umPbtM07RCJDMFXj47wy8uLHD8UD+PHd9HoHVnH/J9bcPWi5Q1xZc+
+      ISf/btQ0AdiSzhX56blZ/uftee7av4dHj43SFfAY3omo6TrfOXUWp8PGlx6/Sy517lJNF4At
+      uq44fWmB516bpK/Tz4kHbifUXdv+kTerXNb5h2fP4nLa5ZN/l2vaAGwplTXOTa7w/OtTBL0t
+      fPK+A+zvb6/bSVkqa3z3uXM47Ta+/PgH5OTf5Zo+AFuUUozPr3Pq9ATZfImTD95+wxMDb5Wm
+      63zrR7/C73Hx+4/cef1RnGL3Mk0AtiilmF2J88zPx4mn8zx6bJRjt/ffcv99WdP5u2d+RaDV
+      xe89cqfM+RuE6QKwRSlFNJ7l2dcmuDK/ziP3jPLg0aGath0plTW+8+xZfG6nnPwNxrQBeLdo
+      PMMLb1zl4vQqHz06xG99cBiv+/3dS9A0nW+fOkNXsJXPPXRI5vwNRgLwLrlCmZfPTPPKuVk+
+      eKCXT3/4NgLe6vcSyu+c/HvaWjn50KFb3qteGE8CUEGuUOJn5+d55ewstw128OixfQz8v0fw
+      lMraO7sW+zjx4O1y8jeomgNQLubIlaDVZWN+cZmBwUEcNmtTBGBLqaxxdmKFH5+eoDPg4eRD
+      hxjs9qPpim/+8E1C3QFOPHBwV273Id6fmgOwPDtBTHfjVXnaerpZjabZPzLQVAHYouuKt69G
+      eO61SVxOO7quuG2wg898VE7+RldzALRCmqvLMZzlAqHRIeZmwgwPh9B1vWlPCqVgfjXBaizD
+      sYN9NOl/01RqDIDOwvQUkXiWkVAf0Y0NOnuH6Aq2NuUIIJqXLIKFqckdG2FqEgBhahIAYWoS
+      AGFqEgBhahIAYWoSAGFqtxyAbHKTsbExYun8dtQjhKFuOQCra5vcdnA/G5HV7ahHCEPd+hRI
+      6ZRKJXSkMUY0nltuhSgXsswtrdAf2ovbaZNWCNFQtrUXSNM0dF3HKt+JFQ1iW58QsxOb42qa
+      htVq7DNojR7lmv14O3HMreNt+0e10Z/+OzHaNPv/0Uy/021vhxaikdQldqnNVS5eusjaZroe
+      b3+d0stcfPMMiWK5rsd5t7WVRcbHLpHIlQw5XnxjjcmJcVY3EoYcD2B5Zpz51ZhBR1PMTk+w
+      uLSCZtBHcXRlkfGJqxQ1vT4BWI2lOHL4CMlYpB5v/38sNrrag5Q14x610tXTi92iMGrY9Pn9
+      aIU8Zd2YIxYycVIFjXKpaMjxUJDPFSiWioZdSJ9bWMRuvbatTV0CYFcaqUwKTTnq8fbvoihr
+      ZUrlsmEn5NT4FYJ9e/G7jHnCbKmsGNw7SDIRN+R4qXQGKxrxeNKQ4ykgtHcEWzFFqmDMB5nX
+      H6Svw01kI1OfNYCulQiHI+wZGMBRx53SVLnAwtIKNpeb/t4eQz5B1ldXyOSLdPcO4HbW/6pF
+      OrHJZiJDT28/LocxC0VdK1EsK1pc9X/SjlKKjegqJez0dnfW/XgApXyGyEaSvt49sggW5iZ3
+      rISpSQCEqUkARFPTtRKpTBalFMlk8oaLJRIA0dSSK1N88x+fJr85w9988ymSsTVOv/Ym2UyC
+      82+/JYtg0dxii5d49tUL+Nq7KBRTuK2K40dHOX12GnfvsARANLdk5CpTq3nGJ2bp63TjdVlY
+      jcbpGxzC4pfLoMJklFIopaQZTgiA/wXKFkzkqERH5wAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='114' name='Overall Churn Rate ' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='SaaS Customer Retention &amp; Churn Analysis Dashboard' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
